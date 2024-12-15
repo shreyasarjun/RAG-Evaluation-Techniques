@@ -1,6 +1,6 @@
-Evaluation Metrics for Retriever
+# Evaluation Metrics for Retriever
 
-1. Precision@K
+## 1. Precision@K
 What is Precision@K?
 •	Precision@K measures the proportion of relevant documents among the top K documents retrieved by the retriever.
 •	Formula: Precision@K=Number of Relevant Documents in Top KK\text{Precision@K} = \frac{\text{Number of Relevant Documents in Top K}}{K}Precision@K=KNumber of Relevant Documents in Top K
@@ -11,7 +11,7 @@ When to Choose This Metric?
 •	Use Precision@K when precision is critical, such as in scenarios where false positives (irrelevant documents) can degrade system performance.
 •	Example: In question-answering systems where irrelevant documents could mislead the generator.
 ________________________________________
-2. Recall@K
+## 2. Recall@K
 What is Recall@K?
 •	Recall@K measures the proportion of relevant documents retrieved out of all relevant documents available in the dataset.
 •	Formula: Recall@K=Number of Relevant Documents in Top KTotal Number of Relevant Documents\text{Recall@K} = \frac{\text{Number of Relevant Documents in Top K}}{\text{Total Number of Relevant Documents}}Recall@K=Total Number of Relevant DocumentsNumber of Relevant Documents in Top K
@@ -22,7 +22,7 @@ When to Choose This Metric?
 •	Use Recall@K when coverage of relevant documents is more important than precision.
 •	Example: In applications like knowledge base search, where missing relevant documents is unacceptable.
 ________________________________________
-3. Mean Reciprocal Rank (MRR)
+## 3. Mean Reciprocal Rank (MRR)
 What is MRR?
 •	Mean Reciprocal Rank evaluates how quickly the first relevant document appears in the ranked list of results.
 •	Formula: MRR=1N∑i=1N1Rank of the First Relevant Documenti\text{MRR} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{\text{Rank of the First Relevant Document}_i}MRR=N1i=1∑NRank of the First Relevant Documenti1 where NNN is the number of queries.
@@ -33,7 +33,7 @@ When to Choose This Metric?
 •	Use MRR when early retrieval of relevant documents is crucial, such as in scenarios where users are only likely to interact with the top result or few results.
 •	Example: FAQ retrieval systems, where users expect the first result to be highly relevant.
 ________________________________________
-4. Normalized Discounted Cumulative Gain (NDCG)
+## 4. Normalized Discounted Cumulative Gain (NDCG)
 What is NDCG?
 •	NDCG evaluates the quality of ranked retrieval results by considering both the relevance and the position of the retrieved documents.
 •	Formula: DCG@K=∑i=1KRelevance of Documentilog⁡2(i+1)\text{DCG@K} = \sum_{i=1}^{K} \frac{\text{Relevance of Document}_i}{\log_2(i + 1)}DCG@K=i=1∑Klog2(i+1)Relevance of Documenti NDCG@K=DCG@KIdeal DCG@K\text{NDCG@K} = \frac{\text{DCG@K}}{\text{Ideal DCG@K}}NDCG@K=Ideal DCG@KDCG@K where Ideal DCG represents the best possible ranking of relevant documents.
@@ -53,10 +53,10 @@ ________________________________________
 
 
 
-Evaluation Metrics for Text Generation and RAG Systems
+# Evaluation Metrics for Text Generation and RAG Systems
 When evaluating the output of generative models (such as the generator in RAG pipelines), we often rely on metrics that measure the quality of the generated text. Below are some commonly used evaluation metrics:
 ________________________________________
-1. BERTScore
+## 1. BERTScore
 What is BERTScore?
 •	BERTScore uses contextual embeddings from pre-trained language models like BERT to evaluate the similarity between generated text and reference text.
 •	Instead of relying on exact word matching, it computes token-level similarity using cosine similarity of embeddings.
@@ -71,7 +71,7 @@ Advantages:
 •	Captures semantic meaning.
 •	Robust to synonyms and word order changes.
 ________________________________________
-2. BLEU (Bilingual Evaluation Understudy)
+## 2. BLEU (Bilingual Evaluation Understudy)
 What is BLEU?
 •	BLEU measures how closely a generated text matches one or more reference texts based on n-gram overlap.
 •	Formula: BLEU=BP⋅exp⁡(∑n=1Nwn⋅log⁡pn)\text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^N w_n \cdot \log p_n \right)BLEU=BP⋅exp(n=1∑Nwn⋅logpn) where pnp_npn is the precision of n-grams, and BP (brevity penalty) penalizes short sentences.
@@ -85,7 +85,7 @@ Limitations:
 •	Penalizes valid paraphrasing.
 •	Doesn't account for synonyms or word order.
 ________________________________________
-3. ROUGE (Recall-Oriented Understudy for Gisting Evaluation)
+## 3. ROUGE (Recall-Oriented Understudy for Gisting Evaluation)
 What is ROUGE?
 •	ROUGE evaluates the quality of summaries by measuring the overlap of n-grams, word sequences, or word pairs between the generated text and reference text.
 •	Common variants:
@@ -101,7 +101,7 @@ Advantages:
 •	Easy to compute and interpret.
 •	Focuses on recall, which is often more important in summarization tasks.
 ________________________________________
-4. RAGAS
+## 4. RAGAS
 What is RAGAS?
 •	RAGAS (Retriever-Augmented Generation Analysis Score) is a comprehensive framework for evaluating RAG systems. It measures both the retriever's and generator's performance together.
 •	RAGAS focuses on retrieval quality, generated text quality, and factual consistency.
@@ -115,7 +115,7 @@ Advantages:
 •	Holistic evaluation for RAG.
 •	Ensures the generated output aligns with retrieved evidence.
 ________________________________________
-5. deepeval
+## 5. deepeval
 What is deepeval?
 •	deepeval is a deep learning-based evaluation framework for text generation tasks. It leverages neural models to assess the quality of generated text based on contextual embeddings, coherence, fluency, and semantic similarity.
 How it Works?
