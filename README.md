@@ -1,15 +1,15 @@
 # Evaluation Metrics for Retriever
 
 ## 1. Precision@K
-What is Precision@K?
-•	Precision@K measures the proportion of relevant documents among the top K documents retrieved by the retriever.
-•	Formula: Precision@K=Number of Relevant Documents in Top KK\text{Precision@K} = \frac{\text{Number of Relevant Documents in Top K}}{K}Precision@K=KNumber of Relevant Documents in Top K
-How it Works?
-•	The retriever ranks documents based on their relevance scores.
-•	Precision@K calculates the ratio of relevant documents in the top K results.
-When to Choose This Metric?
-•	Use Precision@K when precision is critical, such as in scenarios where false positives (irrelevant documents) can degrade system performance.
-•	Example: In question-answering systems where irrelevant documents could mislead the generator.
+### What is Precision@K?
+-	Precision@K measures the proportion of relevant documents among the top K documents retrieved by the retriever.
+-	Formula: Precision@K=Number of Relevant Documents in Top KK\text{Precision@K} = \frac{\text{Number of Relevant Documents in Top K}}{K}Precision@K=KNumber of Relevant Documents in Top K
+### How it Works?
+-	The retriever ranks documents based on their relevance scores.
+-	Precision@K calculates the ratio of relevant documents in the top K results.
+### When to Choose This Metric?
+-	Use Precision@K when precision is critical, such as in scenarios where false positives (irrelevant documents) can degrade system performance.
+-	Example: In question-answering systems where irrelevant documents could mislead the generator.
 ________________________________________
 ## 2. Recall@K
 What is Recall@K?
